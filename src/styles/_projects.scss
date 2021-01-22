@@ -10,6 +10,20 @@
   }
 }
 
+.pill {
+  font-size: 14px;
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 6px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 500px;
+}
+
 .user-projects {
   margin: 20px auto;
   img {
@@ -30,6 +44,10 @@
 }
 
 .contents {
+  h3 {
+    margin-top: 0;
+    padding-top: 0;
+  }
   @media only screen and (min-width: $cut) {
     margin-left: 0;
     width: 48%;
