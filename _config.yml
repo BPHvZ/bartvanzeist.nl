@@ -1,14 +1,12 @@
 # Site settings
 title: Bart van Zeist
-description: Bart van Zeist
+description: Hi, I am Bart 👋. I am a twenty year old, Dutch, software engineer student
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: Bart van Zeist
 user_title: Software Developer
-email: bartvanzeist2000@gmail.com
-github_username: BPHvZ
 
 # Google-analytics
 google-analytics:
