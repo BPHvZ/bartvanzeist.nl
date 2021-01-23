@@ -24,13 +24,13 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   .site-title {
-    font-size: 50px;
+    font-size: 25px;
     display: block;
     line-height: 1;
     color: #fff;
     @media only screen and (min-width: $cut) {
       margin: 0;
-      font-size: 100px;
+      font-size: 75px;
     }
   }
   .site-description {
@@ -55,6 +55,20 @@
     @media only screen and (min-width: $cut) {
       font-size: 20px;
     }
+  }
+}
+
+.selfie {
+  object-fit: cover;
+  object-position: top;
+  width:75px;
+  height:75px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 12px;
+  @media only screen and (min-width: $cut) {
+    width:200px;
+    height:200px;
   }
 }
 
