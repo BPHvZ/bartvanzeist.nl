@@ -28,8 +28,7 @@ gulp.task('critical', function () {
     },{
       width: 1280,
       height: 960
-    }],
-    ignore: ['font-face']
+    }]
   });
 });
 

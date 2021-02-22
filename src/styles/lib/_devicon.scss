@@ -7,10 +7,11 @@
     url(../fonts/devicon.svg?-hdf3wh#devicon) format("svg");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 [class*=" devicon-"],
 [class^="devicon-"] {
-  font-family: devicon;
+  font-family: devicon, 'Helvetica Neue', sans-serif;
   speak: none;
   font-style: normal;
   font-weight: 400;
