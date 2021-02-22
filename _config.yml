@@ -9,3 +9,4 @@ username: Bart van Zeist
 user_title: Software Engineer
 
 exclude: ["package.json", "src", "node_modules"]
+

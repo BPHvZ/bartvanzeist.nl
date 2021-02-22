@@ -12,12 +12,16 @@
     "browser-sync": "^2.26.14",
     "critical": "^2.0.6",
     "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-purgecss": "^4.0.2",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "gulp-uncss": "^1.0.6",
+    "uncss": "^0.17.3"
   },
   "devDependencies": {
     "gulp-prettier": "^3.0.0",
