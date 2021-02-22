@@ -7,8 +7,31 @@ var plumber = require("gulp-plumber");
 var cp = require("child_process");
 var imagemin = require("gulp-imagemin");
 var browserSync = require("browser-sync");
+var critical = require('critical');
 
 var jekyllCommand = /^win/.test(process.platform) ? "jekyll.bat" : "jekyll";
+
+
+gulp.task('critical', function () {
+  return critical.generate({
+    base: '_site/',
+    inline: true,
+    src: 'index.html',
+    target: '../assets/css/critical.css',
+    css: ['assets/css/*.css'],
+    dimensions: [{
+      width: 320,
+      height: 480
+    },{
+      width: 768,
+      height: 1024
+    },{
+      width: 1280,
+      height: 960
+    }],
+    ignore: ['font-face']
+  });
+});
 
 /*
  * Build the Jekyll Site
@@ -25,7 +48,7 @@ gulp.task("jekyll-build", function (done) {
  */
 gulp.task(
   "jekyll-rebuild",
-  gulp.series(["jekyll-build"], function (done) {
+  gulp.series(["critical", "jekyll-build"], function (done) {
     browserSync.reload();
     done();
   })
@@ -36,7 +59,7 @@ gulp.task(
  */
 gulp.task(
   "browser-sync",
-  gulp.series(["jekyll-build"], function (done) {
+  gulp.series(["critical", "jekyll-build"], function (done) {
     browserSync({
       server: {
         baseDir: "_site",
