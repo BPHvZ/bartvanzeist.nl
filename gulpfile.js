@@ -7,9 +7,10 @@ var plumber = require("gulp-plumber");
 var cp = require("child_process");
 var imagemin = require("gulp-imagemin");
 var browserSync = require("browser-sync");
-var critical = require('critical');
-const purgecss = require('gulp-purgecss')
+// var critical = require('critical');
+// const purgecss = require('gulp-purgecss')
 var cleanCSS = require('gulp-clean-css');
+const del = require("del");
 
 var jekyllCommand = /^win/.test(process.platform) ? "jekyll.bat" : "jekyll";
 
@@ -61,40 +62,41 @@ gulp.task("sass", function () {
     .pipe(gulp.dest("assets/css/"));
 });
 
-gulp.task('purgecss', function() {
-  return gulp.src('assets/css/*.css')
-    .pipe(purgecss({
-      content: ['_site/**/*.html']
-    }))
-    .pipe(gulp.dest('assets/css/uncss/'))
-})
+// gulp.task('purgecss', function() {
+//   return gulp.src('assets/css/*.css')
+//     .pipe(purgecss({
+//       content: ['_site/**/*.html']
+//     }))
+//     .pipe(gulp.dest('assets/css/uncss/'))
+// })
 
 // Removing tabs and spaces in CSS
 gulp.task('minify-css', function() {
-  return gulp.src('assets/css/uncss/*.*')
+  return gulp.src('assets/css/*.*')
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(del('assets/css/**', {force:true}))
     .pipe(gulp.dest('assets/css/'));
 });
 
-gulp.task('critical', function () {
-  return critical.generate({
-    base: '_site/',
-    inline: true,
-    src: 'index.html',
-    target: '../assets/css/critical.css',
-    css: ['assets/css/*.css'],
-    dimensions: [{
-      width: 320,
-      height: 480
-    },{
-      width: 768,
-      height: 1024
-    },{
-      width: 1280,
-      height: 960
-    }]
-  });
-});
+// gulp.task('critical', function () {
+//   return critical.generate({
+//     base: '_site/',
+//     inline: true,
+//     src: 'index.html',
+//     target: '../assets/css/critical.css',
+//     css: ['assets/css/*.css'],
+//     dimensions: [{
+//       width: 320,
+//       height: 480
+//     },{
+//       width: 768,
+//       height: 1024
+//     },{
+//       width: 1280,
+//       height: 960
+//     }]
+//   });
+// });
 
 /*
  * Compile fonts
@@ -131,10 +133,8 @@ gulp.task("js", function () {
     .pipe(gulp.dest("assets/js/"));
 });
 
-gulp.task('css',gulp.series(['sass', 'purgecss', 'minify-css', 'critical']));
-
 gulp.task("watch", function () {
-  gulp.watch("src/styles/**/*.scss", gulp.series(["css", "jekyll-rebuild"]));
+  gulp.watch("src/styles/**/*.scss", gulp.series(['sass', 'minify-css', "jekyll-rebuild"]));
   gulp.watch("src/js/**/*.js", gulp.series(["js", "jekyll-rebuild"]));
   gulp.watch("src/fonts/**/*.{tff,woff,woff2}", gulp.series(["fonts"]));
   gulp.watch("src/img/**/*.{jpg,jpeg,png,gif,ico}", gulp.series(["imagemin"]));
