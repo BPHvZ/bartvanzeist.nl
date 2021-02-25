@@ -153,5 +153,5 @@ gulp.task("watch", function () {
 
 gulp.task(
   "default",
-  gulp.series(["js", "sass", "fonts", "browser-sync", "watch"])
+  gulp.series(["js", "sass", "imagemin", "webp", "fonts", "browser-sync", "watch"])
 );
