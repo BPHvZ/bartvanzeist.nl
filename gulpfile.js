@@ -128,6 +128,8 @@ gulp.task('webp', () =>
     .pipe(gulp.dest('src/imagemin/'))
     .pipe(gulp.src("src/imagemin/**/*.{webp,ico,gif}"))
     .pipe(gulp.dest('assets/img/'))
+    .pipe(gulp.src("src/imagemin/**/*512x512.png"))
+    .pipe(gulp.dest('assets/img/'))
 );
 
 /**

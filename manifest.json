@@ -7,7 +7,7 @@
   "display": "standalone",
   "start_url": "https://bartvanzeist.nl/",
   "background_color": "#000000",
-  "theme_color": "transparent",
+  "theme_color": "#000000",
   "description": "Hi, I am Bart 👋. I am a twenty-year-old, Dutch, software engineer.",
   "orientation": "any",
   "related_applications": [],
@@ -41,6 +41,11 @@
       "src": "/assets/img/android-chrome-512x512.webp",
       "sizes": "512x512",
       "type": "image/webp"
+    },
+    {
+      "src": "/assets/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "url": "https://bartvanzeist.nl"
