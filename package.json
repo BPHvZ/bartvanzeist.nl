@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "gulp-prettier": "^3.0.0",
+    "gulp-webp": "^4.0.1",
     "prettier": "^2.2.1"
   }
 }

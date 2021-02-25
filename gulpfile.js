@@ -10,6 +10,7 @@ var browserSync = require("browser-sync");
 // var critical = require('critical');
 // const purgecss = require('gulp-purgecss')
 var cleanCSS = require('gulp-clean-css');
+const webp = require('gulp-webp');
 const del = require("del");
 
 var jekyllCommand = /^win/.test(process.platform) ? "jekyll.bat" : "jekyll";
@@ -118,8 +119,16 @@ gulp.task("imagemin", function () {
     .pipe(
       imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })
     )
-    .pipe(gulp.dest("assets/img/"));
+    .pipe(gulp.dest("src/imagemin/"));
 });
+
+gulp.task('webp', () =>
+  gulp.src('src/imagemin/**/*.{jpg,jpeg,png}')
+    .pipe(webp())
+    .pipe(gulp.dest('src/imagemin/'))
+    .pipe(gulp.src("src/imagemin/**/*.{webp,ico,gif}"))
+    .pipe(gulp.dest('assets/img/'))
+);
 
 /**
  * Compile and minify js
@@ -137,7 +146,7 @@ gulp.task("watch", function () {
   gulp.watch("src/styles/**/*.scss", gulp.series(['sass', 'minify-css', "jekyll-rebuild"]));
   gulp.watch("src/js/**/*.js", gulp.series(["js", "jekyll-rebuild"]));
   gulp.watch("src/fonts/**/*.{tff,woff,woff2}", gulp.series(["fonts"]));
-  gulp.watch("src/img/**/*.{jpg,jpeg,png,gif,ico}", gulp.series(["imagemin"]));
+  gulp.watch("src/img/**/*.{jpg,jpeg,png,gif,ico}", gulp.series(["imagemin", "webp", "jekyll-rebuild"]));
   gulp.watch(["*html", "_includes/*html", "_layouts/*.html"], gulp.series(["jekyll-rebuild"])
   );
 });

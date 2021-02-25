@@ -8,5 +8,5 @@ description: Hi, I am Bart 👋. I am a twenty-year-old, Dutch, software enginee
 username: Bart van Zeist
 user_title: Software Engineer
 
-exclude: ["package.json", "src", "node_modules"]
+exclude: ["package.json", "src", "node_modules", "*.md", "gulpfile.js", "*config.js", "*.lock"]
 
