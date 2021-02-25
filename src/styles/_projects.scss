@@ -24,6 +24,10 @@
   border-radius: 500px;
 }
 
+.list-title {
+  list-style-type: none;
+}
+
 .user-projects {
   margin: 20px auto;
   img {
@@ -33,6 +37,10 @@
   }
   h5 {
     margin: 0;
+  }
+  .list-title {
+    color: #555;
+    font-size: initial;
   }
   li {
     color: $main;
@@ -44,10 +52,6 @@
 }
 
 .contents {
-  h3 {
-    margin-top: 0;
-    padding-top: 0;
-  }
   @media only screen and (min-width: $cut) {
     margin-left: 0;
     width: 48%;
@@ -85,6 +89,18 @@
   }
 }
 
+.project-title {
+  @extend h3;
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: bold;
+}
+
 .project-link {
   display: inline-block;
   margin: 10px 0px;
@@ -116,5 +132,6 @@
 }
 
 #github-link {
+  @extend h4;
   margin: inherit;
 }
