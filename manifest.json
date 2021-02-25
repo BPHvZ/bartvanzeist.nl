@@ -1,0 +1,47 @@
+{
+  "dir": "ltr",
+  "lang": "nl",
+  "name": "Bart van Zeist",
+  "short_name": "Bart van Zeist",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "https://bartvanzeist.nl/",
+  "background_color": "#000000",
+  "theme_color": "transparent",
+  "description": "Hi, I am Bart 👋. I am a twenty-year-old, Dutch, software engineer.",
+  "orientation": "any",
+  "related_applications": [],
+  "prefer_related_applications": "false",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.ico",
+      "sizes": "16x16 32x32 48x48"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "url": "https://bartvanzeist.nl"
+}

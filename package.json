@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "build": "jekyll build && workbox generateSW workbox-config.js"
   },
   "author": "Nathan Randecker",
   "license": "ISC",

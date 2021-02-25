@@ -10,18 +10,19 @@
     name="description"
     content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
   />
+  <link rel="manifest" href="{{ "/manifest.json" | prepend: site.baseurl}}" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl
   }}">
-
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/android-chrome-512x512.png">
   <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+  <script type="text/javascript" src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 
   <!-- Matomo -->
   <script defer async type="text/javascript">
