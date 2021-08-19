@@ -61,10 +61,10 @@
 .contents-right {
   @media only screen and (min-width: $cut) {
     float: right;
-    margin-top: -5%;
     width: 48%;
   }
 }
+
 .images-right {
   @media only screen and (min-width: $cut) {
     float: right;
@@ -94,7 +94,6 @@
   margin-top: 0;
   padding-top: 0;
   display: block;
-  margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0;
   margin-inline-end: 0;
