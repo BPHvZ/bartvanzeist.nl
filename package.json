@@ -1,5 +1,5 @@
 {
-  "name": "particle",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "dev": "gulp",
     "build": "jekyll build && workbox generateSW workbox-config.js"
   },
-  "author": "Nathan Randecker",
+  "author": "Bart van Zeist",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.26.14",
