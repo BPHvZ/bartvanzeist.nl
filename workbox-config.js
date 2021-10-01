@@ -5,5 +5,6 @@ module.exports = {
     "**/*.{css,ttf,woff,woff2,png,jpeg,ico,jpg,js,html,json}"
   ],
   "swDest": "_site/sw.js",
-  "skipWaiting": true
+  "skipWaiting": true,
+  "cleanupOutdatedCaches": true
 };

@@ -130,5 +130,12 @@ if ('serviceWorker' in navigator) {
       // Output success/failure of registration.
       .then(() => console.log('SW registered'))
       .catch(() => console.error('SW registration failed'));
+
+    let refreshing;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (refreshing) return;
+      window.location.reload();
+      refreshing = true;
+    });
   });
 }
